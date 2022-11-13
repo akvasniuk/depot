@@ -8,52 +8,67 @@
 #---
 # encoding: utf-8
 Product.delete_all
-Product.create!(title: 'Docker for Rails Developers',
-  description:
-    %{<p>
-      <em>Build, Ship, and Run Your Applications Everywhere</em>
-      Docker does for DevOps what Rails did for web development—it gives you 
-      a new set of superpowers. Gone are “works on my machine” woes and lengthy 
-      setup tasks, replaced instead by a simple, consistent, Docker-based 
-      development environment that will have your team up and running in seconds. 
-      Gain hands-on, real-world experience with a tool that’s rapidly becoming 
-      fundamental to software development. Go from zero all the way to production 
-      as Docker transforms the massive leap of deploying your app in the cloud 
-      into a baby step.
-      </p>},
-  image_url: 'ridocker.jpg',
-  price: 38.00)
+Product.create!(title: 'Cucumber',
+                description:
+                  %{The fruit of typical cultivars of cucumber is roughly cylindrical, but elongated with tapered ends,
+                   and may be as large as 62 centimeters (24 in) long and 10 centimeters (4 in) in diameter.
+                   Cucumber fruits consist of 95% water},
+                image_url: 'cucumber.jpg',
+                price: 38.00)
 # . . .
-Product.create!(title: 'Build Chatbot Interactions',
-  description:
-    %{<p>
-      <em>Responsive, Intuitive Interfaces with Ruby</em>
-      The next step in the evolution of user interfaces is here. 
-      Chatbots let your users interact with your service in their
-      own natural language. Use free and open source tools along 
-      with Ruby to build creative, useful, and unexpected interactions 
-      for users. Take advantage of the Lita framework’s step-by-step 
-      implementation strategy to simplify bot development and testing.
-      From novices to experts, chatbots are an area in which everyone 
-      can participate. Exercise your creativity by creating chatbot 
-      skills for communicating, information, and fun.
-      </p>},
-  image_url: 'dpchat.jpg',
-  price: 20.00)
+Product.create!(title: 'Carrot',
+                description:
+                  %{carrot, (Daucus carota), herbaceous, generally biennial plant of the Apiaceae family that produces
+                   an edible taproot. Among common varieties root shapes range from globular to long, with lower ends
+                   blunt to pointed. Besides the orange-coloured roots, white-, yellow-, and purple-fleshed varieties
+                   are known.},
+                image_url: 'carrot.jpg',
+                price: 20.00)
 # . . .
 
-Product.create!(title: 'Programming Crystal',
-  description:
-    %{<p>
-      <em>Create High-Performance, Safe, Concurrent Apps</em>
-      Crystal is for Ruby programmers who want more performance or for 
-      developers who enjoy working in a high-level scripting environment. Crystal 
-      combines native execution speed and concurrency with Ruby-like syntax, so 
-      you will feel right at home. This book, the first available on Crystal, 
-      shows you how to write applications that have the beauty and elegance of a 
-      modern language, combined with the power of types and modern concurrency 
-      tooling. Now you can write beautiful code that runs faster, scales better, 
-      and is a breeze to deploy.
-      </p>},
-  image_url: 'crystal.jpg',
-  price: 40.00)
+Product.create!(title: 'Broccoli',
+                description:
+                  %{Broccoli is a fast-growing annual plant that grows 60–90 cm (24–35 inches) tall.
+Upright and branching with leathery leaves, broccoli bears dense green clusters of flower buds at the ends of
+the central axis and the branches..},
+                image_url: 'broccoli.jpg',
+                price: 25.00)
+
+Product.create!(title: 'Potato',
+                description:
+                  %{The potato is a tuber, round or oval, with small white roots called " eyes", that are growth buds.
+The size varies depending on the variety; the colour of the skin can be white, yellow or even purple. The potato culture
+had an enormous importance in Ireland, since it was part of the basic food.},
+                image_url: 'potato.jpg',
+                price: 38.00)
+
+Product.create!(title: 'Tomato',
+                description:
+                  %{They are usually red, scarlet, or yellow, though green and purple varieties do exist,
+and they vary in shape from almost spherical to oval and elongate to pear-shaped.
+Each fruit contains at least two cells of small seeds surrounded by jellylike pulp.},
+                image_url: 'tomato.jpg',
+                price: 42.00)
+
+Product.create!(title: 'Corn',
+                description:
+                  %{Corn is a tall annual cereal grass (Zea mays) that is widely grown for its large elongated ears of
+starchy seeds. The seeds, which are also known as corn, are used as food for humans and livestock and as a source of
+biofuel and can be processed into a wide range of useful chemicals.},
+                image_url: 'corn.jpg',
+                price: 52.00)
+
+Product.create!(title: 'Onion',
+                description:
+                  %{An onion is a round vegetable with a brown skin that grows underground. It has many white layers
+on its inside which have a strong, sharp smell and taste.},
+                image_url: 'onion.jpg',
+                price: 28.00)
+
+Product.create!(title: 'Mushroom',
+                description:
+                  %{A mushroom is the reproductive structure produced by some fungi. It is somewhat like the fruit of
+a plant, except that the "seeds" it produces are in fact millions of microscopic spores that form in the gills or pores
+underneath the mushroom's cap..},
+                image_url: 'mushroom.jpg',
+                price: 45.00)
