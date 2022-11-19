@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 header.main {
   text-align: center;
   @media (min-width: 30em) {
@@ -11,6 +12,7 @@ header.main {
   }
   background: #282;
   margin: 0;
+
   h1 {
     display: none;
   }
@@ -28,6 +30,7 @@ header.main {
     flex-direction: row;
     -webkit-box-orient: horizontal;
   }
+
   nav {
     padding-bottom: 1em;
     background: #141;
@@ -36,6 +39,7 @@ header.main {
       text-align: left;
       padding: 1em;
     }
+
     ul {
       list-style: none;
       margin: 0;
@@ -43,15 +47,18 @@ header.main {
       @media (min-width: 30em) {
         padding-right: 1em;
       }
+
       li {
         margin: 0;
         padding: 0.5em;
         text-transform: uppercase;
         letter-spacing: 0.354em;
+
         a {
           color: #bfb;
           text-decoration: none;
         }
+
         a:hover {
           background: none;
           color: white;
@@ -59,21 +66,32 @@ header.main {
       }
     }
   }
+
   main {
     padding: 0.5em;
   }
 }
 
-.content nav ul{
+.content nav ul {
   list-style: none;
 }
 
-.content{
-  nav{
-    ul{
+.content {
+  nav {
+    ul {
       list-style: none;
     }
   }
 }
 
+.notice, #notice {
+  background: #ffb;
+  border-radius: 0.5em;
+  border: solid 0.177em #882;
+  color: #882;
+  font-weight: bold;
+  margin-bottom: 1em;
+  padding: 1em 1.414em;
+  text-align: center;
+}
 

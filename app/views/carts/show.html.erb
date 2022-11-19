@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <%= stylesheet_link_tag 'carts' %>
+  <title></title>
+</head>
+<body>
+<% if notice %>
+  <aside id="notice"><%= notice %></aside>
+<% end %>
+
+<div class="body">
+  <div class="card">
+
+    <div class="row">
+      <div class="col-md-8 cart">
+        <div class="title">
+          <div class="row">
+            <div class="col"><h4><b>Shopping Cart</b></h4></div>
+            <div class="col align-self-center text-right text-muted"><%= @cart.line_items.size %> items</div>
+          </div>
+        </div>
+
+        <% @cart.line_items.each do |item| %>
+          <div class="row border-top border-bottom">
+            <div class="row main align-items-center">
+              <div class="col-2"><img class="img-fluid" src=<%= image_url(item.product.image_url) %>></div>
+              <div class="col">
+                <div class="row text-muted">Vegetables</div>
+                <div class="row"><%= item.product.title %></div>
+              </div>
+              <div class="col">
+                <a href="#" class="border"><%= item.quantity %></a>
+              </div>
+              <div class="col"><%= number_to_currency(item.total_price) %></div>
+            </div>
+          </div>
+        <% end %>
+        <div class="back-to-shop"><a href="/">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
+      </div>
+      <div class="col-md-4 summary">
+        <div><h5><b>Summary</b></h5></div>
+        <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+          <div class="col">TOTAL PRICE</div><%= number_to_currency(@cart.total_price) %></div>
+
+        <%= button_to 'Empty cart', @cart, method: :delete,
+                      data: { confirm: 'Are you sure?' }, class: 'btn' %>
+        <button class="btn">CHECKOUT</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>
+
+
+
+
