@@ -12,12 +12,14 @@
 
 <body>
 <%= render 'layouts/header' %>
+
+<div id="cart">
+  <%= render_if @cart && @cart.line_items.any?, @cart %>
+</div>
+
 <main class='<%= controller.controller_name %>'>
   <%= yield %>
 </main>
 <%= render 'layouts/footer' %>
 </body>
 </html>
-
-
-

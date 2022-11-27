@@ -1,12 +1,20 @@
-<div id="<%= dom_id line_item %>">
-  <p>
-    <strong>Product:</strong>
-    <%= line_item.product_id %>
-  </p>
+<% if line_item == @current_item %>
+<tr class="line-item-highlight">
+<% else %>
+<tr>
+<% end %>
 
-  <p>
-    <strong>Cart:</strong>
-    <%= line_item.cart_id %>
-  </p>
-
+<div class="row border-top border-bottom">
+  <div class="row main align-items-center">
+    <div class="col-2"><img class="img-fluid" src=<%= image_url(line_item.product.image_url) %>></div>
+    <div class="col">
+      <div class="row text-muted">Vegetables</div>
+      <div class="row"><%= line_item.product.title %></div>
+    </div>
+    <div class="col">
+      <a href="#" class="border"><%= line_item.quantity %></a>
+    </div>
+    <div class="col"><%= number_to_currency(line_item.total_price) %></div>
+  </div>
 </div>
+
