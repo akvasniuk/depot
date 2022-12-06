@@ -39,7 +39,9 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy cart" do
-    post line_items_url, params: { product_id: products(:carrot).id }
+    post line_items_url, params: {
+      product_id: products(:ruby).id
+    }
     @cart = Cart.find(session[:cart_id])
 
     assert_difference("Cart.count", -1) do
@@ -49,4 +51,3 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to store_index_url
   end
 end
-

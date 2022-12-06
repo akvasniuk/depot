@@ -1,3 +1,19 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
 @import "bootstrap";
 
 body {
@@ -10,9 +26,9 @@ header.main {
   @media (min-width: 30em) {
     text-align: left;
   }
+
   background: #282;
   margin: 0;
-
   h1 {
     display: none;
   }
@@ -21,48 +37,52 @@ header.main {
 .content {
   margin: 0;
   padding: 0;
+
   display: flex;
   display: -webkit-flex;
   flex-direction: column;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+
   @media (min-width: 30em) {
     flex-direction: row;
     -webkit-box-orient: horizontal;
   }
+}
 
-  nav {
-    padding-bottom: 1em;
-    background: #141;
-    text-align: center;
+nav {
+  padding-bottom: 1em;
+  background: #141;
+  text-align: center;
+  
+  @media (min-width: 30em) {
+    text-align: left;
+    padding: 1em;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
     @media (min-width: 30em) {
-      text-align: left;
-      padding: 1em;
+      padding-right: 1em;
     }
 
-    ul {
-      list-style: none;
+    li {
       margin: 0;
-      padding: 0;
-      @media (min-width: 30em) {
-        padding-right: 1em;
+      padding: 0.5em;
+      text-transform: uppercase;
+      letter-spacing: 0.354em;
+
+      a {
+        color: #bfb;
+        text-decoration: none;
       }
 
-      li {
-        margin: 0;
-        padding: 0.5em;
-        text-transform: uppercase;
-        letter-spacing: 0.354em;
-
-        a {
-          color: #bfb;
-          text-decoration: none;
-        }
-
-        a:hover {
-          background: none;
-          color: white;
-        }
+      a:hover {
+        background: none;
+        color: white;
       }
     }
   }
@@ -72,27 +92,31 @@ header.main {
   }
 }
 
-.content nav ul {
-  list-style: none;
-}
-
-.content {
-  nav {
-    ul {
-      list-style: none;
-    }
-  }
-}
-
 .notice, #notice {
-  background: #ffb;
-  border-radius: 0.5em;
+  background: #ffb; 
+  border-radius: 0.5em; 
   border: solid 0.177em #882;
   color: #882;
   font-weight: bold;
   margin-bottom: 1em;
   padding: 1em 1.414em;
   text-align: center;
+}
+
+#cart {
+  article {
+    h2 {
+      margin-top: 0;
+    }
+    background-color: white;
+    border-radius: 0.5em;
+    margin: 1em;
+    padding: 1.414em;
+    
+    @media (min-width: 30em) {
+      margin: 0;
+    }
+  }
 }
 
 .depot_form {
@@ -165,8 +189,28 @@ header.main {
     label::before {
       content: "! ";
     }
-    input,textarea {
+    input.textarea {
       background: pink;
     }
+  }
+}
+
+nav.logged_in_nav {
+  border-top: solid thin #bfb;
+  padding: 0.354em 0;
+  margin-top: 0.354em;
+
+  button[type="submit"] {
+    background: none;
+    border: none;
+    color: #bfb;
+    font-size: 1em;
+    letter-spacing: 0.354em;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+  }
+  button[type="submit"]:hover {
+    color: white;
   }
 }

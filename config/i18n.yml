@@ -1,0 +1,12 @@
+---
+translations:
+  - file: app/javascript/packs/translations.json
+    patterns:
+      - "*"
+      - "!*.activerecord"
+      - "!*.errors"
+      - "!*.number.nth"
+
+  - file: app/frontend/locales/:locale.:digest.json
+    patterns:
+      - "*"
