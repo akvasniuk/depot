@@ -2,7 +2,7 @@ en:
   activerecord:
     attributes:
       product:
-        title: "Vegetables shop"
+        title: "Vegetables Shop"
         description: "Vegetable description"
     errors:
       template:
@@ -47,13 +47,13 @@ en:
 
   layouts:
     application:
-      title: "Vegetables shop"
+      title: "Vegetables Shop"
       home: "Home"
       questions: "Questions"
       news: "News"
       contact: "Contact"
     header:
-      title: "Vegetables shop"
+      title: "Vegetables Shop"
       shop_style: "Shop in style"
       shop_site: "With this shop site"
       car: "Cart"
@@ -62,7 +62,7 @@ en:
 
   store:
     index:
-      title_html: "Vegetables shop"
+      title_html: "Vegetables Shop"
       add_html: "Add to Cart"
   thanks: "Thank you for your order, we appreaciate your business"
   empty: "There are no products in your cart"
