@@ -25,26 +25,9 @@
 <%= render 'layouts/header' %>
 
 <section class="content">
-  <nav class="side_nav">
-    <div id="cart" class="carts">
-      <%# Using Partials and Helper to render cart %>
-      <%= render_if @cart && @cart.line_items.any?, @cart %>
-    </div>
+  <%= render 'layouts/show_carts' %>
 
-    <% if session[:user_id] %>
-      <nav class="logged_in_nav">
-        <ul>
-          <li><%= link_to 'Orders', orders_path %></li>
-          <li><%= link_to 'Products', products_path %></li>
-          <li><%= link_to 'Users', users_path %></li>
-          <li><%= button_to 'Logout', logout_path, method: :delete %></li>
-        </ul>
-      </nav>
-    <% end %>
-  </nav>
-
-  <main class="<%= controller.controller_name %>">
-    <%# Used by components to render views %>
+  <main class="<%= controller.controller_name %>" style="margin: 0 auto">
     <%= yield %>
   </main>
 </section>

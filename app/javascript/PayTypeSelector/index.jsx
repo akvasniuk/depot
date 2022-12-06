@@ -21,6 +21,11 @@ class PayTypeSelector extends React.Component {
     }
 
     render() {
+        let locale = localStorage.getItem("locale");
+        if (!locale) {
+            locale = "en";
+        }
+        I18n.locale = locale;
         let PayTypeCustomComponent = NoPayType;
         switch (this.state.selectedPayType) {
             case "Credit card":

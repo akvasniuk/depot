@@ -5,6 +5,10 @@ en:
         title: "Vegetables shop"
         description: "Vegetable description"
     errors:
+      template:
+        header:
+          one: "1 occur %{model}"
+          other: "%{count} errors occur in %{model}"
       models:
         product:
           attributes:
@@ -23,7 +27,7 @@ en:
       legend: "Please Enter Your Details"
     form:
       name: "Name"
-      address_hmtl: "Address"
+      address_html: "Address"
       email: 'Email'
       pay_type: "Pay Type"
       pay_prompt_html: "Select a payment method"
@@ -43,14 +47,22 @@ en:
 
   layouts:
     application:
-      title: "The Pragmatic Bookshelf"
+      title: "Vegetables shop"
       home: "Home"
       questions: "Questions"
       news: "News"
       contact: "Contact"
+    header:
+      title: "Vegetables shop"
+      shop_style: "Shop in style"
+      shop_site: "With this shop site"
+      car: "Cart"
+    footer:
+      foot: "Copyright &copy; Vegetables Website 2022"
+
   store:
     index:
-      title_html: "Your Pragmatic Catalog"
+      title_html: "Vegetables shop"
       add_html: "Add to Cart"
   thanks: "Thank you for your order, we appreaciate your business"
   empty: "There are no products in your cart"

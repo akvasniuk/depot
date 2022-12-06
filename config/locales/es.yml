@@ -6,6 +6,12 @@ es:
       questions: "Preguntas"
       news: "Noticias"
       contact: "Contacto"
+      shop_style: "Compra con estilo"
+      shop_site: "Con este sitio de la tienda"
+      cart: "Carr"
+    footer:
+      foot: "Derechos de autor &copy; Sitio web de verduras 2022"
+
 
   store:
     index:
@@ -67,5 +73,10 @@ es:
       header:
         one: "1 error ha impedido que este %{model} se guarde"
         other: "%{count} errores han impedido que este %{model} se guarde"
+
+  views:
+    pagination:
+      next: "Siguiente"
+      last: "Último"
 
   thanks: "Gracias por su pedido"
