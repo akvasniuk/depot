@@ -103,7 +103,7 @@ Rails.application.configure do
     :port => 587,
     :domain => 'smtp.gmail.com',
     :user_name => "yorkgood4@gmail.com",
-    :password => "wtkzpginsknmqmqm",
+    :password => ENV['email_password'],
     :authentication => :login,
     :enable_starttls_auto => true
   }
