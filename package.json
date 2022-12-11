@@ -14,5 +14,14 @@
   },
   "devDependencies": {
     "webpack-dev-server": "^3"
+  },
+  "name": "depot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/akvasnuk1/depot.git",
+  "author": "akvasnuk1 <kvasnukandriy11@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": "16.17.0"
   }
 }
