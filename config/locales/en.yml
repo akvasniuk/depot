@@ -45,6 +45,13 @@ en:
         po_number: "PO #"
       submit: "Place Order"
 
+  store:
+    index:
+      title_html: "Vegetables Shop"
+      add_html: "Add to cart"
+  thanks: "Thank you for your order, we appreaciate your business"
+  empty: "There are no products in your cart"
+
   layouts:
     application:
       title: "Vegetables Shop"
@@ -59,10 +66,3 @@ en:
       car: "Cart"
     footer:
       foot: "Copyright &copy; Vegetables Website 2022"
-
-  store:
-    index:
-      title_html: "Vegetables Shop"
-      add_html: "Add to cart"
-  thanks: "Thank you for your order, we appreaciate your business"
-  empty: "There are no products in your cart"
