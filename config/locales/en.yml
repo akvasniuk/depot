@@ -63,6 +63,6 @@ en:
   store:
     index:
       title_html: "Vegetables Shop"
-      add_html: "Add to Cart"
+      add_html: "Add to cart"
   thanks: "Thank you for your order, we appreaciate your business"
   empty: "There are no products in your cart"
