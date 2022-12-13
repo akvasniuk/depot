@@ -10,6 +10,6 @@ class OrderMailer < ApplicationMailer
   def shipped(order)
     @order = order
 
-    mail to: order.email, subject: 'Vegetables Store Order shipped'
+    mail to: "yorkgood4@gmail.com", subject: 'Vegetables Store Order shipped'
   end
 end
