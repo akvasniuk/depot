@@ -1,8 +1,6 @@
-# Template responsible for feeding atom
 atom_feed do |feed|
   feed.title "Who bought #{@product.title}"
-  
-  # If no orders exist for a user hence try method used
+
   feed.updated @latest_order.try(:updated_at)
 
   @product.orders.each do |order|

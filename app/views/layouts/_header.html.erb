@@ -44,7 +44,10 @@
         if (val.options.selectedIndex === 0) {
             localStorage.setItem("locale", "en");
             return;
+        }else if(val.options.selectedIndex === 1){
+            localStorage.setItem("locale", "es");
+            return;
         }
-        localStorage.setItem("locale", "es");
+        localStorage.setItem("locale", "ua");
     }
 </script>

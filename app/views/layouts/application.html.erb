@@ -4,11 +4,9 @@
   <title>Vegetables Shop</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <%# Prevents cross-site request forgery attacks %>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
-  <%# Generates link tag to application stylesheet %>
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
 
   <%= javascript_include_tag "i18n" %>
@@ -16,7 +14,6 @@
 
   <%= javascript_pack_tag 'locale_switcher', 'data-turbolinks-track': 'reload' %>
 
-  <%# Generates script tag to load application scripts %>
   <%= javascript_importmap_tags %>
 
 </head>

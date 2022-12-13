@@ -2,7 +2,6 @@ class User < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   has_secure_password
 
-  ## Creating Transaction/Trigger that will rollback when last user deleted
   after_destroy :ensure_an_admin_remains
 
   class Error < StandardError

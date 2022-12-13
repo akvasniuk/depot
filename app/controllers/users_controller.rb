@@ -25,7 +25,6 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        # Redirecting to users index page after creating new user
         format.html { 
           redirect_to users_url, 
           notice: "User #{@user.name} was successfully created." 
@@ -69,12 +68,10 @@ class UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def user_params
       params.require(:user).permit(:name, :password, :password_confirmation)
     end

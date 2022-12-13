@@ -4,10 +4,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @product = products(:one)
 
-    # Creating a random title for insertion
-    # Since name in database will be unique, and @product title already exists
-    # Hence need to create random title
-    @title = "The Great Book #{rand(1000)}"
+    @title = "Vegetables item #{rand(1000)}"
   end
 
   test "should get index" do

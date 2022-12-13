@@ -4,7 +4,7 @@ class SupportMailboxTest < ActionMailbox::TestCase
   test "Create SupportRequest when we get support email" do
     receive_inbound_email_from_mail(
       to: "support@example.com", 
-      from: "chris@somewhere.net", 
+      from: "yorkgood4@gmail.com",
       subject: "Need help",
       body: "I can't figure out how to check out!!"
     )

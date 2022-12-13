@@ -1,0 +1,82 @@
+ua:
+  layouts:
+    header:
+      title: "Овочевий магазин"
+      home: "Додому"
+      questions: "Питання"
+      news: "Новини"
+      contact: "Контакт"
+      shop_style: "Купейте зі стилем"
+      shop_site: "З цим сайтом магазину"
+      cart: "Корзина"
+    footer:
+      foot: "Авторське право &copy; Сайт з продуктами 2022"
+
+
+  store:
+    index:
+      add_html: "Додати до кошика"
+
+  carts:
+    cart:
+      title: "Кошик"
+      empty: "Порожній кошик"
+      checkout: "Купити"
+
+  number:
+    currency:
+    format:
+      unit: "₴UA"
+      precision: 2
+      separator: ","
+      delimiter: "."
+      format: "%n&nbsp;%u"
+
+  orders:
+    new:
+      legend: "Будь ласка, введіть свої дані"
+    form:
+      name: "Ім'я"
+      address_html: "Адреса"
+      email: "Електронна пошта"
+      pay_type: "Метод оплати"
+      pay_prompt_html: "Виберіть спосіб оплати"
+      submit: "Відправити замовлення"
+      pay_types:
+        check: "Чек"
+        credit_card: "Кредитна картка"
+        purchase_order: "Замовлення на купівлю"
+      check_pay_type:
+        routing_number: "Маршрут #"
+        account_number: "Номер рахунку #"
+      credit_card_pay_type:
+        cc_number: "CC #"
+        expiration_date: "Закінчення"
+      purchase_order_pay_type:
+        po_number: "PO №"
+
+  activerecord:
+    errors:
+      messages:
+        inclusion: "не включено до списку"
+        blank: "не може бути порожнім"
+    models:
+      order: "замовлення"
+    attributes:
+      address: "Адреса"
+      name: "Ім'я"
+      email: "Електронна пошта"
+      pay_type: "Метод оплати"
+  errors:
+    template:
+      body: "Є проблеми з такими полями:"
+      header:
+        one: "1 помилка завадила зберегти цю %{model}"
+        other: "%{count} помилок завадили зберегти цю %{model}"
+
+  views:
+    pagination:
+      next: "Далі"
+      last: "Останній"
+
+  thanks: "Дякуємо за замовлення"

@@ -2,7 +2,6 @@ require "test_helper"
 
 class OrdersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    ## Common place to set up object for all tests
     @order = orders(:one)
   end
 
@@ -56,7 +55,6 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to orders_url
   end
 
-  # test for checking redirect when cart is empty
   test "requires item in cart" do
     get new_order_url
 

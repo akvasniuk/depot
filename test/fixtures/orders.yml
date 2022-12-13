@@ -1,22 +1,21 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: Dave Thomas
+  name: Andrii Thomas
   address: MyText
-  email: dave@example.org
+  email: yordgood5@gmail.com
   pay_type: Check
 
 another_one:
-  name: Dave Thomas
+  name: Andrii Thomas
   address: 123 Any St
-  email: dave@example.org 
+  email: yordgood6@gmail.com
   pay_type: Check
-  created_at: <%= 2.days.ago %> # Using ERB inside yml file
+  created_at: <%= 2.days.ago %>
 
 other_customer:
   name: Chris Jones 
   address: 456 Somewhere Ln 
-  email: chris@nowhere.net 
+  email: yordgood6@gmail.com
   pay_type: Check
 
 two:

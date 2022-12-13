@@ -44,12 +44,7 @@ class ProductsController < ApplicationController
         format.html { redirect_to product_url(@product), notice: "Product was successfully updated." }
         format.json { render :show, status: :ok, location: @product }
 
-        ## Using Channel to send entire catalog every time update is made
-        @products = Product.all.order(:title) # Required as this is used in store/index
-        ## render_to_string renders according to same rules as render,
-        # but returns the result in string instead of sending it as response body to browser
-        # data sent as key-value pair
-        # layout: false specifies that we only want view and not entire application layout page
+        @products = Product.all.order(:title)
         ActionCable.server.broadcast('products', { 
           html: render_to_string('store/index', layout: false) 
         })
@@ -76,19 +71,16 @@ class ProductsController < ApplicationController
     @latest_order = @product.orders.order(:updated_at).last
     if stale?(@latest_order)
       respond_to do |format|
-        # This will look for template name who_bought.atom.builder
         format.atom
       end
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def product_params
       params.require(:product).permit(:title, :description, :image_url, :price)
     end

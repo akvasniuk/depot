@@ -1,16 +1,11 @@
 require "test_helper"
 
 class ProductTest < ActiveSupport::TestCase
-  ## Specifying which fixtures to load when performing Tests
-  # If not specifying fixtures then all fixtures will be loaded
   fixtures :products
 
-  ## Test for form elements not being empty
-  test 'product attributes must not be empty' do 
-    ## Trying empty product not to pass any validation
+  test 'product attributes must not be empty' do
     product = Product.new
 
-    ## Assert line is the test case
     assert product.invalid?
     assert product.errors[:title].any?
     assert product.errors[:description].any?
@@ -18,7 +13,6 @@ class ProductTest < ActiveSupport::TestCase
     assert product.errors[:image_url].any?
   end
 
-  ## Test for positive price 
   test 'product price must be positive' do
     product = Product.new(
       title: 'My Book Title',
@@ -40,7 +34,7 @@ class ProductTest < ActiveSupport::TestCase
 
   def new_product(image_url)
     Product.new(
-      title: 'My Book Title',
+      title: 'My vegetable',
       description: 'yyy',
       price: 1,
       image_url: image_url
@@ -53,8 +47,6 @@ class ProductTest < ActiveSupport::TestCase
       http://a.b.c/x/y/z/fred.gif }
     bad = %w{ fred.doc fred.gif/more fred.gif.more }
 
-    ## Passing parameter to assert is additional message that will be
-    ## attached to error message if test fails
     ok.each do |image_url|
       assert new_product(image_url).valid?, "#{image_url} shouldn't be invalid"
     end
@@ -64,9 +56,7 @@ class ProductTest < ActiveSupport::TestCase
     end
   end
 
-  ## Test for unique title in table
   test 'product is not valid without unique title' do
-    # Using Fixture to access data
     product = Product.new(
       title: products(:ruby).title,
       description: 'yyy',

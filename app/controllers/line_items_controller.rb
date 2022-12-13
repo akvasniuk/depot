@@ -1,35 +1,26 @@
 class LineItemsController < ApplicationController
   skip_before_action :authorize, only: :create
 
-  # CurrentCart having cart based on sessions
   include CurrentCart
 
-  # Filter methods that can run 'before', 'after', 'around' controller action
-  # only specifies to run filter only for specified methods
-  before_action :set_cart, only: [:create]  # Specifying set_cart to run before create action
+  before_action :set_cart, only: [:create]
   before_action :set_line_item, only: %i[ show edit update destroy ]
 
-  # GET /line_items or /line_items.json
   def index
     @line_items = LineItem.all
   end
 
-  # GET /line_items/1 or /line_items/1.json
   def show
   end
 
-  # GET /line_items/new
   def new
     @line_item = LineItem.new
   end
 
-  # GET /line_items/1/edit
   def edit
   end
 
-  # POST /line_items or /line_items.json
   def create
-    # Using params object to get :product_id parameter from request
     product = Product.find(params[:product_id])
     
     @line_item = @cart.add_product(product)
@@ -37,7 +28,7 @@ class LineItemsController < ApplicationController
     respond_to do |format|
       if @line_item.save
         format.html { 
-          redirect_to store_index_url # Refreshing store page everytime item added
+          redirect_to store_index_url
         }
 
         format.js {
@@ -56,7 +47,6 @@ class LineItemsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /line_items/1 or /line_items/1.json
   def update
     respond_to do |format|
       if @line_item.update(line_item_params)
@@ -69,7 +59,6 @@ class LineItemsController < ApplicationController
     end
   end
 
-  # DELETE /line_items/1 or /line_items/1.json
   def destroy
     @line_item.destroy
 
@@ -80,15 +69,11 @@ class LineItemsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_line_item
       @line_item = LineItem.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def line_item_params
-      # Allowing only product_id from params list due to which
-      # line_item cannot be updated with a non-existing cart
       params.require(:line_item).permit(:product_id)
     end
 end
