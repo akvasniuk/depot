@@ -61,7 +61,7 @@ class OrdersTest < ApplicationSystemTestCase
 
     fill_in 'order_name', with: 'Dave Thomas'
     fill_in 'order_address', with: '123 Main'
-    fill_in 'order_email', with: 'dave@example.com'
+    fill_in 'order_email', with: 'yorkgood@gmail.com'
 
     assert_no_selector "#order_routing_number"
 
@@ -81,18 +81,16 @@ class OrdersTest < ApplicationSystemTestCase
 
     order = orders.first
 
-    assert_equal "Dave Thomas", order.name
+    assert_equal "Andrii Thomas", order.name
     assert_equal "123 Main Street", order.address
-    assert_equal "dave@example.com", order.email
+    assert_equal "yorkgood@gmail.com", order.email
     assert_equal "Check", order.pay_type
 
     assert_equal 1, order.line_items.size
 
-    ## Testing if mails was sent
-    # In testing env, mails are not sent but stored in ActionMailer::Base.deliveries()
     mail = ActionMailer::Base.deliveries.last
-    assert_equal ["dave@example.com"], mail.to
-    assert_equal 'Sam Ruby <depot@example.com>', mail[:from].value
+    assert_equal ["yorkgood6@gmail.com"], mail.to
+    assert_equal 'Vegetables Shop <yorkgood4@gmail.com>', mail[:from].value
     assert_equal 'Vegetables Store Order Confirmation', mail.subject
   end
 
