@@ -12,28 +12,20 @@ ua:
     footer:
       foot: "Авторське право &copy; Сайт з продуктами 2022"
 
-
-  store:
-    index:
-      title_html: "Додати до кошика"
-      add_html: "Додати до кошика"
-  empty: "Немає продуктів у вашій корзині"
-
   carts:
     cart:
       title: "Ваша корзина"
-      total: "Загальна ціна"
       empty: "Порожня корзина"
       checkout: "Замовити"
-
-  number:
-    currency:
-    format:
-      unit: "₴UA"
-      precision: 2
-      separator: ","
-      delimiter: "."
-      format: "%n&nbsp;%u"
+      total: "Загальна ціна"
+      number:
+        currency:
+        format:
+          unit: "₴UA"
+          precision: 2
+          separator: ","
+          delimiter: "."
+          format: "%n&nbsp;%u"
 
   orders:
     new:
@@ -83,3 +75,9 @@ ua:
       last: "Останній"
 
   thanks: "Дякуємо за замовлення"
+
+  store:
+    index:
+      title_html: "Овочевий магазин"
+      add_html: "Додати до кошика"
+  empty: "Немає продуктів у вашій корзині"
