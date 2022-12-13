@@ -15,13 +15,16 @@ ua:
 
   store:
     index:
+      title_html: "Додати до кошика"
       add_html: "Додати до кошика"
+  empty: "Немає продуктів у вашій корзині"
 
   carts:
     cart:
-      title: "Кошик"
-      empty: "Порожній кошик"
-      checkout: "Купити"
+      title: "Ваша корзина"
+      total: "Загальна ціна"
+      empty: "Порожня корзина"
+      checkout: "Замовити"
 
   number:
     currency:
