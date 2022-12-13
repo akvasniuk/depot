@@ -36,6 +36,7 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         ChargeOrderJob.perform_later(@order, pay_type_params.to_h)
+        OrderMailer.shipped(@order).deliver_later
 
         format.html { redirect_to store_index_url(locale: I18n.locale),
                                   notice: I18n.t('.thanks') }
