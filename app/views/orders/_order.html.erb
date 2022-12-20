@@ -19,4 +19,22 @@
     <%= order.pay_type %>
   </p>
 
+  <p>
+    <strong>Quantity:</strong>
+    <% order_quantity = 0
+       order.line_items.each do |t|
+         order_quantity += t.quantity
+       end %>
+    <%= order_quantity %>
+  </p>
+
+  <p>
+    <strong>Sum:</strong>
+    <% order_sum = 0
+       order.line_items.each do |t|
+         order_sum += t.total_price
+       end %>
+    <%= order_sum %>
+  </p>
+
 </div>
