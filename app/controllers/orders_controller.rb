@@ -18,8 +18,6 @@ class OrdersController < ApplicationController
           order.line_items.each do |t|
             @order_quantity += t.quantity
           end
-          print @order_quantity
-          print "SDASDADADA"
           if @order_quantity >= params['min'].to_i && @order_quantity <= params['max'].to_i
             @filtered_orders.push(order)
           end
