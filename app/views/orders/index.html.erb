@@ -1,5 +1,22 @@
 <p style="color: green"><%= notice %></p>
 
+<form action="/orders" method="get">
+  <div style="display: flex; gap: 30px">
+    <p>Фільтрація по</p>
+    <%= select_tag 'filter',
+                   options_for_select([["Кількість товарів", "quantity"], ["Макс/Мін значення Суми товару", "sum"]]),
+                   { onchange: 'changeFilter(this);', class: 'form-select' } %>
+  </div>
+  <div id="chosenFiltering">
+    <div class="input-group">
+      <input type="text" name="min" class="form-control" placeholder="Мінімальне значення"/>
+      <span class="input-group-addon">-</span>
+      <input type="text" name="max" class="form-control" placeholder="Максимальне значення"/>
+      <input type="submit" class="btn btn-primary">
+    </div>
+  </div>
+</form>
+
 <h1>Orders</h1>
 
 <div id="orders">

@@ -10,6 +10,35 @@ class OrdersController < ApplicationController
   # GET /orders or /orders.json
   def index
     @orders = Order.all
+
+    if params['filter'] == "quantity"
+      @filtered_orders = []
+        @orders.each do |order|
+          @order_quantity = 0
+          order.line_items.each do |t|
+            @order_quantity += t.quantity
+          end
+          print @order_quantity
+          print "SDASDADADA"
+          if @order_quantity >= params['min'].to_i && @order_quantity <= params['max'].to_i
+            @filtered_orders.push(order)
+          end
+        end
+        @orders = @filtered_orders
+    elsif params['filter'] == "sum"
+      @filtered_orders = []
+        @orders.each do |order|
+          @order_sum = 0
+          order.line_items.each do |t|
+            @order_sum += t.total_price
+          end
+          if @order_sum >= params['min'].to_i && @order_sum <= params['max'].to_i
+            @filtered_orders.push(order)
+          end
+        end
+        @orders = @filtered_orders
+      end
+
   end
 
   # GET /orders/1 or /orders/1.json
@@ -18,7 +47,6 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
-
     @order = Order.new
   end
 
